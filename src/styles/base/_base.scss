@@ -26,6 +26,10 @@ html{
     max-width: 1524px;
     margin: 0 auto;
     padding: 0 42px;
+
+    @include media('<tablet') {
+        padding: 0 20px;
+    }
 }
 
 .overlay {
@@ -35,14 +39,14 @@ html{
     width: 100vw;
     height: 100vh;
     background: #030808CC;
-    z-index: 10;
+    z-index: 1;
     visibility: hidden;
     opacity: 0;
     transition: $anim_03;
 
-    &.active {
+    .active & {
         visibility: visible;
-        opacity: 1;
+        opacity: 0.8;
     }
 }
 
@@ -50,8 +54,17 @@ html{
     color: $white;
     transition: $anim_03;
 
+    svg {
+        fill: $white;
+        transition: $anim_03;
+    }
+
     &:hover {
         color: $green_100;
+
+        svg {
+            fill: $green_100;
+        }
     }
 }
 
@@ -75,5 +88,87 @@ html{
             background-color: $purple_200;
             border-color: $purple_200;
         }
+    }
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__logo {
+        width: 100%;
+        max-width: 177px;
+        margin-bottom: 55px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__title,
+    &__text {
+        font: $regular 24px/1 $Instrument;
+    }
+
+    &__title {
+        margin-bottom: 13px;
+    }
+
+    &__item-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    &__item {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+
+        &--link {
+            transition: $anim_03;
+
+            &:hover {
+                color: $purple_200;
+            }
+        }
+    }
+
+    &__icon {
+        padding-top: 2px;
+    }
+
+    &__text {
+        margin: 0;
+        text-align: center;
+    }
+}
+
+.socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    &__link {
+        width: 52px;
+        height: 52px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        border: 1px solid $white;
+        padding: 15px;
+
+        &:hover {
+            --socials-icon-scale: 1.3;
+        }
+    }
+
+    &__icon {
+        scale: var(--socials-icon-scale, 1);
+        transition: $anim_03;
     }
 }

@@ -2,8 +2,15 @@
 
 const header = document.querySelector('.header');
 
+let lastScrollY = window.scrollY;
+
 const toggleHeaderScroll = () => {
-    header?.classList.toggle('header--scroll', window.scrollY > 0);
+    const currentScrollY = window.scrollY;
+
+    header?.classList.toggle('header--scroll', currentScrollY > 0);
+    header?.classList.toggle('header--scroll-down', currentScrollY > lastScrollY && currentScrollY > 0);
+
+    lastScrollY = currentScrollY;
 };
 
 toggleHeaderScroll();
@@ -11,14 +18,14 @@ window.addEventListener('scroll', toggleHeaderScroll);
 
 const burger = document.querySelector('.burger');
 const linkClose = document.querySelectorAll('.link--close');
-const overflow = document.querySelector('.overflow');
+const overlay = document.querySelector('.overlay');
 
 burger?.addEventListener('click', function () {
     document.body.classList.toggle('body--lock');
     document.body.classList.toggle('active');
 });
 
-overflow?.addEventListener('click', function () {
+overlay?.addEventListener('click', function () {
     document.body.classList.toggle('body--lock');
     document.body.classList.toggle('active');
 });
