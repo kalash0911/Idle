@@ -1,4 +1,79 @@
+html{
+    scroll-behavior: smooth;
+}
+
+.body {
+
+    &--lock{
+        overflow: hidden;
+    }
+}
+
 #wrapper {
     position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
+}
+
+.main {
+    flex: 1 1 auto;
+}
+
+.container {
+    width: 100%;
+    max-width: 1524px;
+    margin: 0 auto;
+    padding: 0 42px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #030808CC;
+    z-index: 10;
+    visibility: hidden;
+    opacity: 0;
+    transition: $anim_03;
+
+    &.active {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.link {
+    color: $white;
+    transition: $anim_03;
+
+    &:hover {
+        color: $green_100;
+    }
+}
+
+.btn {
+    display: inline-block;
+    border-radius: 4px;
+    border: 1px solid;
+    text-align: center;
+    font: $bold 16px/1 $Instrument;
+    padding: 16px 40px;
+    text-transform: uppercase;
+    transition: $anim_03;
+
+    &__primary {
+        color: $black_100;
+        background-color: $purple_100;
+        border-color: $purple_100;
+
+        &:hover {
+            color: $white;
+            background-color: $purple_200;
+            border-color: $purple_200;
+        }
+    }
 }

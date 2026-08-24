@@ -5,17 +5,40 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Idle</title>
+  <link rel="icon" type="image/png" href="./images/icons/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="/styles/main.scss">
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 
 <body>
   <div id="wrapper">
     {{> header }}
-    <main>
+    <main class="main">
       <section class="main-section">
         <div class="container">
-          <div class="content">
-
+          <div class="main-section__content">
+            <h1 class="main-section__title title">Breakfast. Brunch. Lunch. <br> Dinner. Or just because.</h1>
+            <a class="main-section__btn btn btn__primary" href="#">BOOK A TABLE</a>
+          </div>
+        </div>
+        <div class="main-section__slider swiper mainSlider">
+          <div class="main-section__slider-wrapper swiper-wrapper">
+            <div class="main-section__slider-slide swiper-slide">
+              <div class="main-section__slider-item">
+                <img class="main-section__slider-img" src="../images/main-img.jpg" alt="img">
+              </div>
+            </div>
+            <div class="main-section__slider-slide swiper-slide">
+              <div class="main-section__slider-item">
+                <img class="main-section__slider-img" src="../images/img3.jpg" alt="img">
+              </div>
+            </div>
           </div>
         </div>
       </section>
