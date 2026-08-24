@@ -20,6 +20,7 @@
     &--scroll {
         --logo-width: 50px;
         --content-padding-block: 15px;
+        --nav-before-height: 82px;
     }
 
     &--scroll-down {
@@ -43,17 +44,27 @@
     }
 
     &__nav {
+        scrollbar-width: none; 
+        -ms-overflow-style: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
         @include media('<widescreen_x') {
             position: absolute;
             top: 0;
             left: -50%;
             height: 100vh;
             min-height: 100vh;
+            height: 100dvh;
+            min-height: 100dvh;
             width: 50%;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            padding: 150px 30px 30px 30px;
+            padding: 150px 30px 0 30px;
+            padding-bottom: calc(30px + env(safe-area-inset-bottom));
             background: $purple_900;
             border-radius: 0;
             box-shadow: none;
@@ -74,12 +85,11 @@
         &::before {
             content:'';
             position: fixed;
-            top: -200px;
-            left: 0;
+            top: 0;
+            left: -100%;
             width: 50%;
-            height: 200px;
+            height: var(--nav-before-height, 102px);
             background: #3C1855;
-            background: linear-gradient(0deg, rgba(60, 24, 85, 0) 0%, rgba(60, 24, 85, 1) 50%);
             transition: $anim_05;
 
             @include media('<tablet') {
@@ -89,7 +99,7 @@
             .active & {
 
                 @include media('<widescreen_x') {
-                    top: 0;
+                    left: 0;
                 }
             }
         }
