@@ -104,6 +104,18 @@ html{
         }
     }
 
+    &__secondary {
+        color: $white_100;
+        background-color: transparent;
+        border-color: $white_100;
+
+        &:hover {
+            color: $white;
+            background-color: $purple_200;
+            border-color: $purple_200;
+        }
+    }
+
     &__yellow {
         color: $black_100;
         background-color: $yellow_500;
