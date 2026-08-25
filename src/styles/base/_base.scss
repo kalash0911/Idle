@@ -50,6 +50,20 @@ html{
     }
 }
 
+.title {
+    margin: 0;
+    text-align: center;
+    font: $bold 60px/1.1 $Instrument;
+
+    @include media('<tablet') {
+        font-size: 44px;
+    }
+
+    @include media('<phone') {
+        font-size: 24px;
+    }
+}
+
 .link {
     color: $white;
     transition: $anim_03;
@@ -87,6 +101,17 @@ html{
             color: $white;
             background-color: $purple_200;
             border-color: $purple_200;
+        }
+    }
+
+    &__yellow {
+        color: $black_100;
+        background-color: $yellow_500;
+        border-color: $yellow_500;
+
+        &:hover {
+            background-color: $yellow_600;
+            border-color: $yellow_600;
         }
     }
 }
