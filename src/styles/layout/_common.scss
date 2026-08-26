@@ -339,3 +339,16 @@
         }
     }
 }
+
+.map-section {
+    background-color: $black;
+    
+    &__map {
+        width: 100%;
+        min-height: 573px;
+
+        @include media('<phone') {
+            min-height: 450px;
+        }
+    }
+}
