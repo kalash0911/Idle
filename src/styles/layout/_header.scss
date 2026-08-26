@@ -1,4 +1,6 @@
 .header {
+    --header-mob-size: 52px;
+
     position: fixed;
     width: 100%;
     left: 50%;
@@ -17,10 +19,26 @@
         z-index: 3;
     }
 
+    &::after {
+        content:'';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $black;
+        opacity: var(--header-after-opacity, 0);
+        z-index: -1;
+        transition: $anim_03;
+    }
+
     &--scroll {
+        --header-after-opacity: .5;
         --logo-width: 50px;
         --content-padding-block: 15px;
         --nav-before-height: 82px;
+        --header-mob-size: 40px;
+        --geo-link-svg-width: 12px;
     }
 
     &--scroll-down {
@@ -194,15 +212,21 @@
 
     &__geo-link {
         display: none;
-        min-width: 52px;
-        height: 52px;
+        min-width: var(--header-mob-size);
+        height: var(--header-mob-size);
         place-items: center;
         border-radius: 50%;
         border: 1px solid $white;
+        transition: $anim_03;
 
         @include media('<widescreen_x') {
             display: grid;
             z-index: 2;
+        }
+
+        svg {
+            max-width: var(--geo-link-svg-width, 18px);
+            transition: $anim_03;
         }
     }
 
@@ -229,14 +253,15 @@
 
         display: none;
         position: relative;
-        min-width: 52px;
-        height: 52px;
+        min-width: var(--header-mob-size);
+        height: var(--header-mob-size);
         border-radius: 50%;
         background: #205A5E0A;
         z-index: 3;
         border: none;
         outline: none;
         background: none;
+        transition: $anim_03;
 
         @include media('<widescreen_x') {
             display: block;
