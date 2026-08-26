@@ -1,4 +1,73 @@
 .footer {
-    min-height: 100vh;
     background-color: $black;
+
+    &__top {
+        padding: 100px 0;
+        @include media('<phone') {
+            padding: 45px 0;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 45px;
+
+        @include media('<phone') {
+            gap: 30px;
+        }
+    }
+
+    &__menu-link {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font: $regular 18px/1 $Instrument;
+
+        @include media('<phone') {
+            flex-direction: column;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__bot {
+        position: relative;
+        padding: 20px 0;
+        background-color: $gray_900;
+
+        &::before {
+            content:'';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: $white_100;
+            opacity: .3;
+        }
+    }
+
+    &__bot-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 15px;
+    }
+
+    &__bot-text {
+        margin: 0;
+        font: $regular 16px/1 $Instrument;
+
+        &--link {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
 }
