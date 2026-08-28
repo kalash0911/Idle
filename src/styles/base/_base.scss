@@ -169,13 +169,8 @@ html{
 
     &__item {
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         gap: 8px;
-
-        @include media('<phone') {
-            flex-direction: column;
-            align-items: center;
-        }
 
         &--link {
             transition: $anim_03;
