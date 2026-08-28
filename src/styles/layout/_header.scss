@@ -48,7 +48,8 @@
 
     &__content {
         position: relative;
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
         align-items: center;
         gap: 15px;
         border-bottom: 1px solid $white_100;
@@ -57,6 +58,8 @@
 
         @include media('<widescreen_x') {
             position: static;
+            display: flex;
+            justify-content: space-between;
             border-bottom: none;
         }
     }
@@ -141,12 +144,11 @@
     }
 
     &__link {
-        font: $regular 18px/1 $Instrument;
+        font: $regular 18px/1 $InstrumentSans;
         text-transform: uppercase;
     }
 
     &__logo-wrap {
-        flex: 1 1 auto;
         text-align: center;
 
         @include media('<widescreen_x') {
@@ -176,6 +178,7 @@
 
     &__contacts {
         display: flex;
+        justify-content: flex-end;
         gap: 65px;
 
         @include media('<widescreen_x') {
@@ -247,7 +250,7 @@
     &__contacts-title {
         margin: 0;
         color: $white_100;
-        font: $regular 14px/1 $Instrument;
+        font: $regular 14px/1 $InstrumentSans;
     }
 
     &__contacts-block {
@@ -258,7 +261,7 @@
 
     &__contacts-text {
         margin: 0;
-        font: $regular 18px/1 $Instrument;
+        font: $regular 18px/1 $InstrumentSans;
     }
 
     &__burger {
@@ -344,6 +347,7 @@
     }
 
     &__info-item {
+        align-items: center;
 
         &--link {
             &:hover {
@@ -351,6 +355,10 @@
                 text-decoration: underline;
             }
         }
+    }
+
+    &__info-icon {
+        padding: 0;
     }
 
     &__info-title,
@@ -411,7 +419,7 @@
             display: block;
             padding: 2px;
             color: #545454;
-            font: $regular 12px/1 $Instrument;
+            font: $regular 12px/1 $InstrumentSans;
             transition: $anim_03;
             text-transform: uppercase;
 

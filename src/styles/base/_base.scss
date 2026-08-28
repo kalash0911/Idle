@@ -53,7 +53,7 @@ html{
 .title {
     margin: 0;
     text-align: center;
-    font: $bold 60px/1.1 $Instrument;
+    font: $bold 60px/1.1 $InstrumentSans;
 
     @include media('<tablet') {
         font-size: 44px;
@@ -87,7 +87,7 @@ html{
     border-radius: 4px;
     border: 1px solid;
     text-align: center;
-    font: $bold 16px/1 $Instrument;
+    font: $bold 16px/1 $InstrumentSans;
     padding: 16px 40px;
     text-transform: uppercase;
     transition: $anim_03;
@@ -147,9 +147,23 @@ html{
         }
     }
 
+    &__logo-desc {
+        @include media('<widescreen_x') {
+            display: none;
+        }
+    }
+
+    &__logo-mob {
+        display: none;
+
+        @include media('<widescreen_x') {
+            display: block;
+        }
+    }
+
     &__title,
     &__text {
-        font: $regular 24px/1 $Instrument;
+        font: $regular 24px/1.2 $InstrumentSans;
 
         @include media('<phone') {
             font-size: 14px;
@@ -169,7 +183,7 @@ html{
 
     &__item {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         gap: 8px;
 
         &--link {
@@ -182,7 +196,12 @@ html{
     }
 
     &__icon {
-        padding-top: 2px;
+        padding-top: 4px;
+
+        @include media('<phone') {
+            max-width: 20px;
+            padding-top: 0;
+        }
     }
 
     &__text {

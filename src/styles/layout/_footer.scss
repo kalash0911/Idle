@@ -35,7 +35,7 @@
         display: flex;
         align-items: center;
         gap: 8px;
-        font: $regular 18px/1 $Instrument;
+        font: $regular 18px/1 $InstrumentSans;
 
         @include media('<phone') {
             flex-direction: column;
@@ -74,7 +74,7 @@
 
     &__bot-text {
         margin: 0;
-        font: $regular 16px/1 $Instrument;
+        font: $regular 16px/1 $InstrumentSans;
 
         &--link {
             &:hover {
