@@ -544,16 +544,24 @@
         @include media('<phone') {
             margin-bottom: 0;
         }
+
+        &--purple {
+            --menu-section-title-color: #{$purple_100};
+        }
+
+        &--yellow {
+            --menu-section-title-color: #{$yellow_600};
+        }
     }
 
     &__title-line {
         width: 100%;
         height: 2px;
-        background-color: $purple_100;
+        background-color: var(--menu-section-title-color, $white_100);
     }
 
     &__title {
-        color: $purple_100;
+        color: var(--menu-section-title-color, $white_100);
         font: $bold 48px/1.12 $InstrumentSans;
         white-space: nowrap;
         text-transform: uppercase;
