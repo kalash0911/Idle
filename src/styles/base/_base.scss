@@ -4,8 +4,11 @@ html{
 
 .body {
 
-    &--lock{
-        overflow: hidden;
+    &.menu {
+        
+        .header__contacts {
+            display: none;
+        }
     }
 }
 
@@ -14,7 +17,7 @@ html{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    overflow: clip;
 }
 
 .main {
